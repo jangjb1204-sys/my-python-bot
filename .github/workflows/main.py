@@ -554,8 +554,9 @@ import os
 from datetime import datetime
 
 # --- 설정 ---
-OUTPUT_DIR_A = ".github/workflows/US_stock/"
-OUTPUT_DIR_B = ".github/workflows/US_stock/"
+BASE_DIR = "US_stock"
+OUTPUT_DIR_A = BASE_DIR
+OUTPUT_DIR_B = BASE_DIR
 
 # --- 그래프 설정 ---
 GRAPH_COLORS = {
