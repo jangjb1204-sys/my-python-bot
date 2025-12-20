@@ -408,7 +408,7 @@ def create_puddle_trading_chart(data: pd.DataFrame, name: str) -> None:
             ))
 
     fig.update_layout(
-        title=dict(text=f'({name}) 차트', x=0.5, y=0.95, font=dict(size=20, color='#333')),
+        title=dict(text=f'({name}) CHART', x=0.5, y=0.95, font=dict(size=20, color='#333')),
         plot_bgcolor='white', paper_bgcolor='white', font=dict(family='Arial', size=12, color='#444'),
         showlegend=True, legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='center', x=0.5),
         xaxis_rangeslider_visible=False, height=600, margin=dict(l=80, r=20, t=85, b=50)
