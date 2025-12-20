@@ -4,7 +4,7 @@ name: US Stock Auto Analysis
 on:
   schedule:
     # 매일 한국 시간 오전 8시 (UTC 기준 전날 23시)에 자동 실행
-    - cron: '0 */1 * * *'
+    - cron: '10 14 * * *'
   workflow_dispatch: # 깃허브 웹사이트에서 버튼을 눌러 즉시 실행 가능
 
 # 저장소에 파일을 쓸 수 있는 권한 부여 (403 에러 해결책)
