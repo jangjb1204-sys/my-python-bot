@@ -12,6 +12,18 @@ from openpyxl import Workbook
 from openpyxl.styles import PatternFill, Font
 from openpyxl.utils import get_column_letter
 import time  # 시간 지연을 위해 추가
+import os
+
+# 1. 현재 실행 중인 파이썬 스크립트의 경로를 가져옵니다.
+current_dir = os.getcwd()
+
+# 2. 저장할 하위 폴더명을 설정합니다.
+folder_name = "US_stock"
+folder_path = os.path.join(current_dir, folder_name)
+
+# 3. 폴더가 없다면 생성합니다 (exist_ok=True는 이미 폴더가 있어도 에러를 내지 않습니다).
+os.makedirs(folder_path, exist_ok=True)
+
 
 # --- 상수 정의 ---
 SEARCH_DAYS = 365 * 4
@@ -366,7 +378,8 @@ def create_table_image(data: pd.DataFrame, name: str) -> None:
         cell.set_linewidth(0.25)
 
     # 경로 수정 필요시 변경
-    save_path = f"/Users/jinbyuljang/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/US/{name}_table.jpg"
+    save_path = os.path.join(folder_path, f"{name}_table.jpg")
+    
     plt.savefig(save_path, bbox_inches='tight', dpi=300)
     plt.close()
 
@@ -412,7 +425,7 @@ def create_puddle_trading_chart(data: pd.DataFrame, name: str) -> None:
         side='left', mirror=True
     )
     
-    save_path = f"/Users/jinbyuljang/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/US/{name}_chart.jpg"
+    save_path = save_path = os.path.join(folder_path, f"{name}_chart.jpg")
     fig.write_image(save_path, width=800, height=500, scale=2)
 
 def save_to_excel(data: pd.DataFrame, name: str) -> None:
@@ -422,7 +435,7 @@ def save_to_excel(data: pd.DataFrame, name: str) -> None:
     data_for_excel = data.copy()
     data_for_excel['Date'] = data_for_excel['Date'].dt.strftime(DATE_FORMAT)
     data_for_excel = data_for_excel.fillna('')
-    excel_file = f"/Users/jinbyuljang/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/US/{name}_table.xlsx"
+    excel_file = save_path = os.path.join(folder_path, f"{name}_table.xlsx")
     data_for_excel.to_excel(excel_file, index=False, engine='openpyxl')
 
     wb = Workbook()
@@ -541,8 +554,8 @@ import os
 from datetime import datetime
 
 # --- 설정 ---
-OUTPUT_DIR_A = "/Users/jinbyuljang/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/US/"
-OUTPUT_DIR_B = "/Users/jinbyuljang/Library/Mobile Documents/com~apple~CloudDocs/Documents/Coding/US/"
+OUTPUT_DIR_A = ".github/workflows/US_stock/"
+OUTPUT_DIR_B = ".github/workflows/US_stock/"
 
 # --- 그래프 설정 ---
 GRAPH_COLORS = {
