@@ -30,7 +30,7 @@ jobs:
 
       # 5. 파이썬 코드 실행 (이때 US_stock 폴더에 결과물이 생김)
       - name: Run main script
-        run: python main.py
+        run: python .github/workflows/main.py
 
       # 6. 생성된 결과물(US_stock 폴더)을 다시 내 저장소에 저장(Commit & Push)
       - name: Commit and Push changes
