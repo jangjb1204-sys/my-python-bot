@@ -4,5 +4,5 @@ requests
 numpy
 matplotlib
 plotly
-kaleido==0.2.1
+plotly[kaleido]
 openpyxl
