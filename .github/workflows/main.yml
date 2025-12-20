@@ -6,11 +6,6 @@ on:
     # 한국 시간 기준 매일 오전 8시 (UTC 23:00)
     - cron: '0 23 * * *'
   workflow_dispatch: # 버튼 눌러서 수동 실행 가능하게 함
-  
-# --- 이 부분을 반드시 추가하세요 ---
-permissions:
-  contents: write
-# ------------------------------
 
 jobs:
   run-analysis:
