@@ -1,3 +1,12 @@
+pandas
+yfinance
+requests
+numpy
+matplotlib
+plotly
+kaleido
+openpyxl
+os
 aiobotocore @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_1cl06d5vjc/croot/aiobotocore_1714464399334/work
 aiohappyeyeballs @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_170hwh6b2i/croot/aiohappyeyeballs_1725434022310/work
 aiohttp @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_4dbk4qcpk1/croot/aiohttp_1725527761629/work
