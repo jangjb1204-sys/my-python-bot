@@ -522,7 +522,9 @@ def get_ticker_configs() -> dict:
         'GLD': 'GOLD',
         'FINX' : 'FINX',
         'BTGD' : 'BTGD',
-        'SLV' : 'SILVER'
+        'SLV' : 'SILVER',
+        'KORU' : 'KORU',
+        'TSLA' : 'TESLA'
     }
 
 if __name__ == '__main__':
